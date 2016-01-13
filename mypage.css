@@ -60,6 +60,17 @@ button{padding:10px;
   font-size: 20px;
   
 }
+.footer_button{padding:10px;
+  border: none;
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color: Transparent;
+  height: 50px;
+  width: 100px;
+  margin-left: 10px;
+  font-size: 20px;
+  
+}
 
 
 form{
