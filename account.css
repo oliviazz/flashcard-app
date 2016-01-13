@@ -57,6 +57,7 @@ form{
     border: none;
     font-style:bold;
     background-color: Transparent;
+    color: white;
 }
 
 .header{
@@ -82,7 +83,7 @@ form{
 }
 
 .footer{
-    position: absolute;
+    position: static;
     right: 0;
     bottom: 0;
     left: 0;
