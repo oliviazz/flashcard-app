@@ -26,5 +26,16 @@ form{
 }
 
 .tb{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border: 3px solid white;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    
+}
+
+.tb:focus{
+    outline: none;
+    border-color: darkturquoise;
+    box-shadow: 0 0 10px darkturquoise;
 }
