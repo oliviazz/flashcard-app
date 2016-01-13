@@ -6,47 +6,84 @@
 body {
     font-family:Geneva, Tahoma, Verdana, sans-serif;
     text-align: center;
+    position: relative;
+    margin: 0;
     background-size: 100%;
     background-color: darkturquoise;
     font-size: 25px;
+    min-height: 100%;
     color:white;
     font-style: bold;
 }
 
-button {
+.startbutton {
   padding:10px;
   border: 3px solid #FFFFFF;
   color:#FFFFFF;
   text-decoration:none;
   background-color: Transparent;
   height: 50px;
-  width:  175px;
+  width:  190px;
   margin-left: 10px;
   font-size: 18px;
 }
 
-#toolbar {
-    border: 5px solid #FFFFFF;
-    font-size: 30px;
+button{padding:10px;
+  border: none;
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color: Transparent;
+  height: 50px;
+  width: 100px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.wrapper {
+    min-height: 100%;
+    position: relative;
+}
+.header{
+    margin-top:25px;
+    padding: 0;
+    border: 4px solid #FFFFFF;
+  
 }
 
+.footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color:darkturquoise;
+    background-color:#2eb7b7;
+    text-align: right;
+    font-style:bold;
+    
+}
+
+
 table{
-    height: 25px;
+    height: 20px;
+    
 }
 
 .tbbutton{
-    width: 160px;
+    width: 200px;
+    height:35px;
     padding:10px;
-   font-size: 25px;
+   font-size: 20px;
    border: none;
+    font-style:bold;
 }
 
-#title{ font-size: 75px;
+#title{ font-size: 85px;
     padding:3px;
     margin-top: inherit; 
     margin-bottom: 0px;
     margin-right: 10px;
     margin-left: 10px;
+    text-shadow: 4px 4px #2eb7b7;
 }
 
 input[type=text] {
