@@ -1,5 +1,5 @@
-/*--------| FlashCard App Project   
-----------| Jack Boyle & Olivia Zhang; Gabor Pd. 7  
+/*--------| FlashCard App Project
+----------| Jack Boyle & Olivia Zhang; Gabor Pd. 7
 ----------| account.css: Styling for account creation page
 # id, . class */
 #header{
@@ -36,7 +36,7 @@ form{
     margin-top: 8px;
 }
 
-button{
+.footer_button{
     padding:10px;
     border: none;
     color:#FFFFFF;
@@ -46,7 +46,7 @@ button{
     width: 100px;
     margin-left: 10px;
     font-size: 20px;
-  
+
 }
 
 .tbbutton{
@@ -56,11 +56,11 @@ button{
    font-size: 20px;
    border: none;
     font-style:bold;
-} 
+}
 .header{
     margin-top:25px;
     padding: 0;
-    border: 4px solid #FFFFFF; 
+    border: 4px solid #FFFFFF;
 }
 
 .tb{
@@ -89,7 +89,7 @@ button{
     background-color:#2eb7b7;
     text-align: right;
     font-style:bold;
-    
+
 =======
 
 #sub{
