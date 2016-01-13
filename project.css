@@ -49,7 +49,7 @@ body{
   font-size: 18px;
 }
 
-button{padding:10px;
+.footer_button{padding:10px;
   border: none;
   color:#FFFFFF;
   text-decoration:none;
