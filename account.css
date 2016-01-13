@@ -53,10 +53,12 @@ form{
     width: 200px;
     height:35px;
     padding:10px;
-   font-size: 20px;
-   border: none;
+    font-size: 20px;
+    border: none;
     font-style:bold;
+    background-color: Transparent;
 }
+
 .header{
     margin-top:25px;
     padding: 0;
@@ -78,7 +80,7 @@ form{
     border-color: darkturquoise;
     box-shadow: 0 0 10px darkturquoise;
 }
-<<<<<<< HEAD
+
 .footer{
     position: absolute;
     right: 0;
@@ -89,8 +91,7 @@ form{
     background-color:#2eb7b7;
     text-align: right;
     font-style:bold;
-
-=======
+}
 
 #sub{
     width: 160px;
@@ -102,5 +103,4 @@ form{
     color: white;
     font-size: 25px;
     margin-left: 49px;
->>>>>>> origin/master
 }
