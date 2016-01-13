@@ -1,23 +1,52 @@
+/*--------| FlashCard App Project   
+----------| Jack Boyle & Olivia Zhang; Gabor Pd. 7  
+----------| project.css: Styling for main page
+# id, . class */
+
 body {
     font-family:Geneva, Tahoma, Verdana, sans-serif;
     text-align: center;
     background-size: 100%;
-    font-size: 23px;
+    background-color: darkturquoise;
+    font-size: 25px;
     color:white;
-    font-style: italic;
+    font-style: bold;
 }
 
 button {
-  padding:5px;
-  border: 1px solid #FFFFFF;
+  padding:10px;
+  border: 3px solid #FFFFFF;
   color:#FFFFFF;
   text-decoration:none;
   background-color: Transparent;
-  height: 40px;
-  width: 70px;
+  height: 50px;
+  width:  175px;
   margin-left: 10px;
-  font-size: 15px;
+  font-size: 18px;
+}
 
+#toolbar {
+    border: 5px solid #FFFFFF;
+    font-size: 30px;
+}
+
+table{
+    height: 25px;
+}
+
+.tbbutton{
+    width: 160px;
+    padding:10px;
+   font-size: 25px;
+   border: none;
+}
+
+#title{ font-size: 75px;
+    padding:3px;
+    margin-top: inherit; 
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 input[type=text] {
