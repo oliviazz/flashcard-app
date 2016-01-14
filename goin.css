@@ -1,6 +1,6 @@
 /*--------| FlashCard App Project
 ----------| Jack Boyle & Olivia Zhang; Gabor Pd. 7
-----------| account.css: Styling for account creation page
+----------| goin.css: Styling for login page
 # id, . class */
 #header{
     font-family:Geneva, Tahoma, Verdana, sans-serif;
@@ -28,7 +28,7 @@ body{
      margin-left: 20%;
      padding: 5px;
      background-color: gray;
- }
+}
 
 form{
     font-family: Geneva, Tahoma, Verdana, sans-serif;
@@ -95,8 +95,8 @@ form{
     font-style:bold;
 }
 
-#sub{
-    width: 160px;
+#log{
+    width: 140px;
     height: 60px;
     border: 3px solid darkturquoise;
     background-color: Transparent;
@@ -104,5 +104,5 @@ form{
     font-family: Geneva, Tahoma, Verdana, sans-serif;
     color: white;
     font-size: 25px;
-    margin-left: 49px;
+    margin-left: 59px;
 }
