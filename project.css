@@ -67,6 +67,7 @@ body{
 
 .footer_button{
     padding:10px;
+<<<<<<< HEAD
     border: 0px;
     color:#FFFFFF;
     text-decoration:none;
@@ -75,6 +76,17 @@ body{
     width: 100px;
     margin-left: 10px;
     font-size: 20px;
+=======
+  border: none;
+  color:#FFFFFF;
+  text-decoration:none;
+  background-color: Transparent;
+  height: 50px;
+  width: 100px;
+  margin-left: 10px;
+  font-size: 20px;
+
+>>>>>>> origin/master
 }
 /*button{ padding:10px;
   border: 2px #FFFFFF;

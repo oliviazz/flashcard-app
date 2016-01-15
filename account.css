@@ -11,11 +11,16 @@
 }
 
 body{
-    background-size: 100%;
-    background-color: darkturquoise;
+      font-family:Geneva, Tahoma, Verdana, sans-serif;
+    text-align: left;
     position: relative;
     margin: 0;
+    background-size: 100%;
+    background-color: darkturquoise;
+    font-size: 25px;
     min-height: 100%;
+    color:white;
+    font-style: bold;
 }
 
 .wrapper {
@@ -41,6 +46,7 @@ form{
 .footer_button{
     padding:10px;
     border: 0px solid #FFFFFF;
+    border: none;
     color:#FFFFFF;
     text-decoration:none;
     background-color: Transparent;
