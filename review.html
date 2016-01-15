@@ -9,13 +9,13 @@
 </head>
 <body>
     <div class = "wrapper">
-        <div class = "header">
-              <table>
+    <div class = "header">
+               <table>
             <tr><td></td>
             <td><button type = "button" class = "tbbutton" accesskey="c"  onclick="location.href='newacct.html'">Create New</button></td>
-            <td><button type = "button" class = "tbbutton" accesskey="c" onclick="location.href='search.html'">Search</button></td>
-            <td><button type = "button" class = "tbbutton" accesskey="c" onclick="location.href='review.html'">Review</button></td>
-            <td><button type = "button" class = "tbbutton" accesskey="c" id = "thisPage">My Account</font></button></td>
+            <td><button type = "button" class = "tbbutton" accesskey="c" onclick="location.href='search.html'" > Search</button></td>
+            <td><button type = "button" class = "tbbutton" accesskey="c" id = "thisPage">Review</button></td>
+            <td><button type = "button" class = "tbbutton" accesskey="c" onclick="location.href='mypage.html'">My Account</font></button></td>
             <td><button type = "button" class = "tbbutton" accesskey="c" >     </button></td>
 
             <td><button type = "button" class = "tbbutton" accesskey="c"  onclick="location.href='login.html'">Login</font></button></td>
@@ -25,11 +25,14 @@
         </div>
         <div class = "content">
             <br>
-            <h1 id = "title">My Account
+            <h1 id = "title">Review</h1>
                 <br>
             
 
-            <form></form>
+            <form>
+                 <input type="text" name="user" id="user"class="tb">
+                <button type="submit" name="sub" id="sub" accesskey="S" class = "footer_button"><u>S</u>earch</button>
+                </form>
             </div>
  
         <div class = "footer">
@@ -42,6 +45,6 @@
 </body>
 
 <script>
-         document.getElementById("thisPage").style.textShadow = "-1px 0 #008080, 0 1px #008080, 1px 0 #008080, 0 -1px #008080";
+    document.getElementById("thisPage").style.textShadow = "-1px 0 #008080, 0 1px #008080, 1px 0 #008080, 0 -1px #008080";
 </script>
 </html>
