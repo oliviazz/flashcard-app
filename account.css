@@ -1,7 +1,7 @@
 /*--------| FlashCard App Project
 ----------| Jack Boyle & Olivia Zhang; Gabor Pd. 7
 ----------| account.css: Styling for account creation page
-# id, . class */
+*/
 #header{
     font-family:Geneva, Tahoma, Verdana, sans-serif;
     text-align: center;
@@ -40,11 +40,11 @@ form{
 
 .footer_button{
     padding:10px;
-    border: none;
+    border: 2px solid #FFFFFF;
     color:#FFFFFF;
     text-decoration:none;
     background-color: Transparent;
-    height: 50px;
+    height: 35px;
     width: 100px;
     margin-left: 10px;
     font-size: 20px;
@@ -84,7 +84,7 @@ form{
 }
 
 .footer{
-    position: static;
+    position: fixeds;
     right: 0;
     bottom: 0;
     left: 0;
@@ -93,7 +93,24 @@ form{
     background-color:#2eb7b7;
     text-align: right;
     font-style:bold;
+    height:24px; 
+    width: 100%; 
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
 }
+ .footer_contents {
+
+        height:24px; /*Replace with the height your footer should be*/
+        width: 1000px; // /*Replace with the height your footer should be*/
+        margin:auto;
+
+    }
+
 
 #sub{
     width: 160px;
