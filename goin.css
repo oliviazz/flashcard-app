@@ -11,11 +11,16 @@
 }
 
 body{
-    background-size: 100%;
-    background-color: darkturquoise;
+    font-family:Geneva, Tahoma, Verdana, sans-serif;
+    text-align: left;
     position: relative;
     margin: 0;
+    background-size: 100%;
+    background-color: darkturquoise;
+    font-size: 25px;
     min-height: 100%;
+    color:white;
+    font-style: bold;
 }
 
 .wrapper {
@@ -83,8 +88,9 @@ form{
     box-shadow: 0 0 10px darkturquoise;
 }
 
+
 .footer{
-    position: static;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
@@ -93,6 +99,22 @@ form{
     background-color:#2eb7b7;
     text-align: right;
     font-style:bold;
+     height:24px; 
+    width: 100%; 
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+}
+ .footer_contents {
+    align-content: right;
+    height:24px; /*Replace with the height your footer should be*/
+    width: 1000px; // /*Replace with the height your footer should be*/
+    margin:auto;
+
 }
 
 #log{

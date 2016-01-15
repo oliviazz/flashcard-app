@@ -67,7 +67,7 @@ body{
 
 .footer_button{
     padding:10px;
-  border: 3px solid #FFFFFF;
+  border: none;
   color:#FFFFFF;
   text-decoration:none;
   background-color: Transparent;
