@@ -11,7 +11,7 @@
 }
 
 body{
-      font-family:Geneva, Tahoma, Verdana, sans-serif;
+    font-family:Geneva, Tahoma, Verdana, sans-serif;
     text-align: left;
     position: relative;
     margin: 0;
@@ -130,8 +130,6 @@ form{
     margin:auto;
 
 }
-
->>>>>>> origin/master
 
 #sub{
     width: 160px;
