@@ -276,7 +276,17 @@ form{
     font-size: 25px;
     margin-left: 49px;
 }
-
+#log{
+    width: 140px;
+    height: 60px;
+    border: 3px solid darkturquoise;
+    background-color: Transparent;
+    margin-top: 20px;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    color: white;
+    font-size: 25px;
+    margin-left: 59px;
+}
 .tb:focus{
     outline: none;
     border-color: darkturquoise;
