@@ -6,6 +6,7 @@
 <html>
 <head><title>Flashcards 2.0</title>
    <link rel="stylesheet" type="text/css" href="mypage.css">
+    
 </head>
 <body>
     <div class = "wrapper">
@@ -23,24 +24,119 @@
             </table>
         </div>
         <div class = "content">
-            <br>
-            <h1 id = "title">My Account
-                <br>
             
-
-            <form></form>
-            </div>
+<!--            <h3 id = "title">My Account</h3>-->
+                <br><br>
+                <div class= mySets>
+                    <div class = "setLabel">My Flashcard Sets:</div>
+                  <div id = "physics" class = "flashcardSet" onClick="switchNewSet()">Physics</div>
+                  <div id = "math" class = "flashcardSet"  onClick="switchNewSet()">Math</div>
+                  <div id = "spanish" class = "flashcardSet"  onClick="switchNewSet()">Spanish</div>
+                  <div id = "apush" class = "flashcardSet"  onClick="switchNewSet()">Apush</div>
+                </div>
+                
+             <div class = "myFlashcardFrame">
+                 <button type = "button" class = "cyclebuttonL" onClick = "prevCard()" >&lt;</button>
+                    <div class = "myFlashcards" id = "container"  onClick = "turnCard()"><i>Select a flashcard set</i> </div>
+                   <button type = "button" class = "cyclebuttonR" onClick = "nextCard()">	&gt;</button>
+             </div>
+                <br><br><br><br><br><br><br>
+                
+        </div>
  
         <div class = "footer">
             <div  class = "footer_contents">
-                <button type = "button" class = "footer_button"href = "about.html">About</button> &nbsp;&nbsp;&nbsp;
-                <button type = "button" class = "footer_button"  href = "contact.html">Contact</button>
+                <button type = "footer_button" class = "footer_button"href = "about.html">About</button> &nbsp;&nbsp;&nbsp;
+                <button type = "footer_button" class = "footer_button"  href = "contact.html">Contact</button>
             </div>
         </div>
     </div>
+
 </body>
 
 <script>
-         document.getElementById("thisPage").style.textShadow = "-1px 0 #008080, 0 1px #008080, 1px 0 #008080, 0 -1px #008080";
+
+    var flashcardSets = {"apush":{0:["Animal Facts", "Facts to help with animals" ],1:["Dogs are ", "Mammals"], 2:["Birds are", "Not"]}, 
+                         "math":{0:["Math Problems","Facts to help with math"],1:["1 + 1 = ", "2"], 2:["3/5 = ", ".6"]},
+                         "spanish":{0:["Espanol Problems","Facts para ayudar con espanol"],1:["Entonces", "Therefore"], 2:["Que paso", "What's Up"]},
+                         "physics":{0:["Physics Formulas","Facts to help with physics"],1:["E = ", "mc^2"], 2:["F = ", "ma"]}
+                        }; 
+    var curIndex = 0;
+    var sets = document.getElementsByClassName("flashcardSet");
+    var setCount = sets.length;
+    var curSet = -1; //Default, no set chosen
+    var question = true;
+    
+    document.addEventListener("keypress", function(event){
+            if(event.keyCode == 32){
+                turnCard();
+            }
+            if(event.keyCode == 37){
+                prevCard();
+            }
+            if(event.keyCode == 39){
+                nextCard();
+            }    
+        
+    });
+    for (var i = 0; i <= setCount; i += 1) {
+        sets[i].onclick = function(e) {
+        switchNewSet(flashcardSets[this.id]);
+        };
+        
+    }
+ 
+    
+    //var curSet = flashcardSets[Object.keys(flashcardSets)[0]];//All flashcard sets belonging to the user; key is ID of set.
+    switchNewSet(curSet);
+    
+    
+    document.getElementById("thisPage").style.textShadow = "-1px 0 #008080, 0 1px #008080, 1px 0 #008080, 0 -1px #008080";
+    
+    
+    function switchNewSet(newSet){  //Puts a new set in the flashcard viewer
+        curSet = newSet;
+        curIndex = 0; //resets to beginning of deck
+        setCards();
+    }
+    
+   function setCards(){
+      curCard = curSet[curIndex];
+       
+      document.getElementById('container').innerHTML = curCard[0]; //First Element in Array is question;
+       
+           
+   }
+    
+    function nextCard(){
+        if(curIndex < 3){
+            curIndex += 1;
+            setCards();
+        } 
+    }
+    
+    function prevCard(){
+        if(curIndex >0){
+            curIndex -= 1;
+            setCards();
+        }
+    }
+    
+    function turnCard(){
+        
+        if(question){ //If not the title card
+            document.getElementById('container').innerHTML = curCard[1]; 
+            
+            question = false;
+        }
+        
+        else if(!question){
+            document.getElementById('container').innerHTML = curCard[0];
+            question = true;
+        }
+        
+        
+    }
+   
 </script>
 </html>
