@@ -1,66 +1,49 @@
 <?php
-    function getDBHandle($dbFileName) // opens a connection to the SQL database in $dbFileName
+    class MyDB extends SQLite3
     {
-        $sqliteName = "sqlite$dbFileName";
-        try
-        {
-            $dbh = new PDO($sqliteName, $user, $password);
-        }
-        catch(PDOException $e)
-        {
-            die("Connection to $sqliteName; " . $e->getMessage());
-        }
+       function __construct()
+       {
+          $this->open('userinfo.db');
+       }
     }
-    function getTableNames($dbh) // returns an array of table names
+    $db = new MyDB();
+    if(!$db)
     {
-        $query = "SELECT name FROM sqlite_mast WHERE type='table';";
-        try
-        {
-            $ar = $dbh->query($query);
-            return array_diff($ar->fetchAll(PDO::FETCH_COLUMN, 0),array("sqlite_sequence"));
-        }
-        catch(PDOException $e)
-        {
-            die("getTableName query failed: " . $e->getMessage());
-        }
+       echo $db->lastErrorMsg();
     }
-    function dropTables($dbh, $aTables) // remove the table names given in the array $aTables
+    else
     {
-        foreach($aTables as $tbl)
-        {
-            $query = "DROP TABLE IF EXISTS $tbl;";
-            try
-            {
-                $dbh->exec($query);
-            }
-            catch(PDOException $e)
-            {
-                die("Failed to remove errant table $tbl<br>" . $e->getMessage());
-            }
-        }
+       echo "Opened database successfully\n";
     }
-    function createMissingTables($dbh, $aTables, $createSpecFile) // create those tables listed in array $aTables
-    {
-        if(!sizeof($aTables))
-        {
-            return;
-        }
-        include_once($createSpecFile);
-        foreach($aTables as $tbl)
-        {
-            if(!array_key_exists($tbl=strtolower($tbl), $aTableSpec))
-            {
-                continue;
-            }
-            $query = $aTableSpec[$tbl];
-            try
-            {
-                $dbh->exec($query);
-            }
-            catch(PDOException $e)
-            {
-                die("Failed to create table $tbl<br>" . $e->getMessage());
-            }
-        }
-    }
+    $sqltxt = "
+        CREATE TABLE UserInfo
+        (Name   Text NOT NULL,
+        Username  Text NOT NULL,
+        Password   REAL NOT NULL);
+        ";
+    /*$sqltxt2 = "
+        CREATE TABLE StudySets
+        (Id INTEGER PRIMARY KEY NOT NULL,
+        Username    Text NOT NULL,
+        )";*/
+
+     $ret = $db->exec($sqltxt);
+     ///$ret2 = $db->exec($sqltxt2);
+     if(!$ret)
+     {
+         echo $db->lastErrorMsg();
+     }
+     else
+     {
+         echo "Table created successfully\n";
+     }
+     /*if(!$ret2)
+     {
+         echo $db->lastErrorMsg();
+     }
+     else
+     {
+         echo "Table2 created successfully\n";
+     }*/
+     $db->close();
  ?>
