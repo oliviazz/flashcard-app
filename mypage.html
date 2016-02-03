@@ -98,6 +98,7 @@
     }
     
     function switchNewSet(newSet){  //Puts a new set in the flashcard viewer
+        question = false;
         curSet = newSet;
         curIndex = 0; //resets to beginning of deck
         setCards();
@@ -183,7 +184,7 @@
                         clearInterval(myVar);
                     }},
             330);
-            alert(Object.keys(setDict).length);
+            //alert(Object.keys(setDict).length);
             calibrateSets();
         }
     }
