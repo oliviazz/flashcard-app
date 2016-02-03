@@ -31,7 +31,8 @@
                     <button id = "newSetBtn" class = "button" onClick = "newSetBtn()" style = "font-size:60px; background-color: #009092; border:none; float:right; height:100px; width: 80px">+</button>
                   
                   <div id = "spanish" class = "flashcardSet"  onClick="switchNewSet()">Spanish</div>
-                  <div id = "apush" class = "flashcardSet"  onClick="switchNewSet()">Apush</div>
+                  <div id = "physics" class = "flashcardSet"  onClick="switchNewSet()">Physics</div>
+                    <div id = "apush" class = "flashcardSet"  onClick="switchNewSet()">Biology</div>
                   
                 </div>
             <div id = setTitle></div>
@@ -40,6 +41,7 @@
                  <div class = "myFlashcards" id = "container"  onClick = "turnCard()"><i>Select a flashcard set</i> </div>
                 <button type = "button" class = "cyclebuttonR" onClick = "nextCard()" style = "color:#009092; font-size:60px;">&gt;                            </button>
              </div>
+            <button type = "button" onClick = editCard()>Edit Card </button>
             
                 <br><br><br><br><br><br><br>
         </div>
@@ -56,10 +58,10 @@
 
 <script>
     document.getElementById("thisPage").style.textShadow = "-1px 0 #008080, 0 1px #008080, 1px 0 #008080, 0 -1px #008080";
-    var flashcardSets = {"apush":{0:["APUSH Flashcards", "Facts to help with animals" ],1:["Dogs are ", "Mammals"], 2:["Birds are", "Not"]}, 
-                         "math":{0:["Math Problems","Facts to help with math"],1:["1 + 1 = ", "2"], 2:["3/5 = ", ".6"]},
-                         "spanish":{0:["Espanol Problems","Facts para ayudar con espanol"],1:["Entonces", "Therefore"], 2:["Que paso", "What's Up"]},
-                         "physics":{0:["Physics Formulas","Facts to help with physics"],1:["E = ", "mc^2"], 2:["F = ", "ma"]}
+    var flashcardSets = {"apush":{0:["The process of transport of materials through a membrane is ______", "diffusion" ],1:["The organelle that produces energy in the cell, known as  a cell's powerhouse, is the ____ ", "mitochondria"], 2:["The lack of cell ____ is one of the major differences between plant and animal cells", "walls"]}, 
+                         "math":{0:["Local maximums must yield a ____ value for the second derivative test","negative"],1:["1 + 1 = ", "2"], 2:["3/5 = ", ".6"]},
+                         "spanish":{0:["Espanol Problems","Facts para ayudar con espanol"],1:["La definicion de la palabra 'entonces' in ingles", "Therefore"], 2:["Una palabra que significa 'socks' en ingles", "Los calcetones"], 3:["Una fiesta para celebrar el compleano de una chica que tiene quince anos","La quinceaneara"]},
+                         "physics":{0:["Physics Formulas","Facts to help with physics"],1:["E = _____ ", "mc^2"], 2:["Impulse is equal to _____", "Change in momentum, or average force * duration of time force is applied"], 3:["At the point of equilibrium in a harmonic system, the external forces are equal to _____"," 0 "]  }
                          //Each card represented by an array: first is question, second element is answer
                         }; 
     var curIndex = 0;
@@ -106,13 +108,13 @@
     
    function setCards(){
       curCard = curSet[curIndex];
-      document.getElementById('container').innerHTML = curCard[0]; //First Element in Array is question;
-      //Set given card in viewing pane      
+       
+      document.getElementById('container').innerHTML = curCard[0]; //First Element in Array is question;     
    }
     
     function nextCard(){
     
-        if(curIndex < 3 && curIndex!= -1){
+        if(curIndex < Object.keys(curSet).length && curIndex!= -1){
             curIndex += 1;
             setCards();
         } 
@@ -140,9 +142,29 @@
     function newSetBtn(){
         curIndex = -1;
         //document.getElementById('setTitle').innerHTML += '<input type = text placeholder="Flashcard Set Name"  id = newTitle>'; 
-        document.getElementById('container').innerHTML = "<input type = text placeholder=\"Enter Flashcard Set Title\"  id = newTitle><br><textarea type  = text class = enter id = enteredText> </textarea> <br><button type = button class = button id = makeSetBtn onClick = makeSet() >Create Set </button>";
+        document.getElementById('container').innerHTML = "<input type = text placeholder=\"Enter Flashcard Set Title\"  id = newTitle><br><textarea type  = text class = enter id = enteredText> </textarea> <br><button type = button class = button id = makeSetBtn onClick = makeSet() ><u>C</u>reate Set </button>";
     }
     
+    function editCard(){
+        
+        document.getElementById('container').innerHTML = "<textarea type  = text class = enter id = curText></textarea><button type = button onclick = saveCard()> <u>S</u>ave</button>";
+        if(question)
+            document.getElementById('curText').value = curSet[curIndex][0];
+        else
+             document.getElementById('curText').value = curSet[curIndex][1];
+        document.getElementById('container').onclick = "";
+    }
+    
+    function saveCard(){
+        if(question)
+       curSet[curIndex][0] =  document.getElementById('curText').value;
+        else
+         curSet[curIndex][1] =  document.getElementById('curText').value;   
+       document.getElementById('container').innerHTML = "";
+        setCards();
+        
+         document.getElementById('container').onclick = turnCard();
+    }
     function makeSet(){
         var setIndex = 0;
         var setDict = {};
@@ -184,7 +206,7 @@
                         clearInterval(myVar);
                     }},
             330);
-            //alert(Object.keys(setDict).length);
+//        alert(Object.keys(setDict).length);
             calibrateSets();
         }
     }
@@ -194,7 +216,7 @@
         var answer; //answer located at removeIndex
         var removeIndex;
         var genericWords = ['the','and', 'so', 'but', 'for', 'it', 'why', 'or', 'not', 'because', 'as',
-                            'a', 'an', 'cause', 'with', 'they','then', 'did', 'also', "to", "however", "therefore"];
+                            'a', 'an', 'cause', 'with', 'they','then', 'did', 'also', "to", "however", "therefore", "after", "before"];
       
         do{
             removeIndex = Math.floor(Math.random()*allWords.length);
