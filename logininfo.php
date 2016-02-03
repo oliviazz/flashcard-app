@@ -15,4 +15,5 @@
     {
        echo "Opened database successfully\n";
     }
+    
  ?>
