@@ -1,6 +1,8 @@
 #Flashcard App 
-__Web Application Development Final Project__ </br>
-Olivia Zhang and Jack Boyle, 2016 </br>
+-Authors: Olivia Zhang and Jack Boyle, 2016
+<br>
+Web Application Development Final Project
+ </br>
 
 **Create automatic flashcard sets from large blocks of texts, lecture notes, or chapter outlines.**
 
