@@ -1,2 +1,8 @@
 # flashcard-app
-Web 2015 Final Project 
+Final Project for Web Application Development, 2016 
+
+* Create automatic flashcard sets from large blocks of texts, lecture notes, or chapter outlines. *
+
+- Inputted text parsed and divided into set of flashcards 
+- Key words and phrases removed and displayed on opposite side 
+- Used: PHP, Javascript, HTML
