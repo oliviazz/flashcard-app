@@ -6,6 +6,6 @@ Olivia Zhang and Jack Boyle, 2016
 
 - Inputted text parsed and divided into set of flashcards 
 - Key words and phrases removed and displayed on opposite side 
-- Created sets stored in user accounts 
+- Created sets can be saved and accessed through user accounts
 
-* Used: PHP, Javascript, HTML *
+*Written in PHP, Javascript, HTML, and CSS*
